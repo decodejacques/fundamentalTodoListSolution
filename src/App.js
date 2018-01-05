@@ -6,15 +6,19 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = ['first item', 'second item']
+  }
   displayItem = (item) => {
     return (<li> {item} </li>)
   }
   render() {
-    var arr = ['first item', 'second item'];
+
     return (<div>
       <input /> <button>press me</button>
       <ul>
-        {arr.map(this.displayItem)}
+        {this.state.map(this.displayItem)}
         
       </ul>
     </div>)
