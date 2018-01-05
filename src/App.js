@@ -15,18 +15,16 @@ class App extends Component {
     return (<li> {item} </li>)
   }
 
-  addItem = (item) => {
-    this.setState(st => ({ items: st.items.concat(item) }))
+  addItem = () => {
+    this.setState(st => ({ items: st.items.concat(this.inp.value) }))
   }
 
   componentDidMount() {
-    this.addItem('first item');
-    this.addItem('second item');
   }
 
   render() {
     return (<div>
-      <input /> <button>press me</button>
+      <input ref={r => this.inp = r}/> <button onClick={this.addItem}>press me</button>
       <ul>
         {this.state.items.map(this.displayItem)}
 
