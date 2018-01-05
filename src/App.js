@@ -6,15 +6,16 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 
 class App extends Component {
-  displayItem(item) {
+  displayItem = (item) => {
     return (<li> {item} </li>)
   }
   render() {
+    var arr = ['first item', 'second item'];
     return (<div>
       <input /> <button>press me</button>
       <ul>
-        {this.displayItem('first item')}
-        {this.displayItem('second item')}
+        {arr.map(this.displayItem)}
+        
       </ul>
     </div>)
 
