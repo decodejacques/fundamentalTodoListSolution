@@ -10,7 +10,7 @@ class App extends Component {
     super();
     this.state = { items: [] }
   }
-  
+
   displayItem = (item) => {
     return (<li> {item} </li>)
   }
@@ -22,6 +22,7 @@ class App extends Component {
   componentDidMount() {
     this.addItem('first item');
     this.addItem('second item');
+    setInterval(() => this.addItem('x'), 1000);
   }
 
   render() {
