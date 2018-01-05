@@ -22,7 +22,6 @@ class App extends Component {
   componentDidMount() {
     this.addItem('first item');
     this.addItem('second item');
-    setInterval(() => this.addItem('x'), 1000);
   }
 
   render() {
