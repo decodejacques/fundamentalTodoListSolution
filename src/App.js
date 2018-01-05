@@ -8,13 +8,20 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 class App extends Component {
   constructor() {
     super();
-    this.state = { items: ['first item', 'second item'] }
+    this.state = { items: [] }
   }
+  
   displayItem = (item) => {
     return (<li> {item} </li>)
   }
+
   addItem = (item) => {
     this.setState(st => ({ items: st.items.concat(item) }))
+  }
+
+  componentDidMount() {
+    this.addItem('first item');
+    this.addItem('second item');
   }
 
   render() {
